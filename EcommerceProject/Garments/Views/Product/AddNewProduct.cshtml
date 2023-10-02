@@ -1,0 +1,163 @@
+﻿@*@model IEnumerable<RegistrationWithImage.Models.Addnewproduct>*@
+@{
+    ViewBag.Title = "AddNewProduct";
+    Layout = "~/Views/Shared/addproductlayout.cshtml";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="border border-warning"></span>
+<div class="container">
+   
+    <br/>
+    <br /><br />
+    <h1>Add New Product</h1>
+    
+  
+    <div class="row">
+        <div class="col-md-6">
+            <br />
+            <br />
+            <br />
+            <form id="AddNewProduct" method="post"  enctype="multipart/form-data" onsubmit="return AjaxPost(this)">
+                <label>Product Title</label> <br />
+                <input id="ProductName" name="ProductName" class="form-control" placeholder="Product Name" />
+
+                <label>Price</label> <br />
+                <input id="Price" name="Price" class="form-control" placeholder="Enter Price" />
+
+                <label>Discription</label> <br />
+                <input id="shortdiscription" name="shortdiscription" class="form-control" placeholder="Product Discription" />
+
+                <label>Product Type</label> <br />
+                <input id="producttype" name="producttype" class="form-control" placeholder="Product Type" />
+
+                <label>Upload Image</label> <br />
+                <input id="ImageUpload" name="ImageUpload" class="form-control" type="file" />
+                <br/>
+                
+                <button class="btn btn-danger">Add</button>
+                <br />
+                <br />
+                <br />
+            </form>
+        </div>
+    </div>
+</div><br />
+<br />
+<br />
+<div class="container">
+<h1 class="text-center">Product List</h1>
+    <br /><br />
+    
+        @foreach (var item in ViewBag.Mylist)
+        {
+        <form id="EditProduct" method="post" enctype="multipart/form-data" onsubmit="return AjaxEDIT(this)">
+            @*@double price = Convert.ToInt32(@item.Price);*@
+            <div class="col-md-3 men-pro-item simpleCart_shelfItem" style="margin-bottom:20px">
+                <div class="">
+                    <div class="image" style="margin-bottom:20px">
+                        @*<img  class="img-responsive" src="~/Content/images/@item.PicUrl" height="250" width="240" />*@
+                       
+                        <span class="product-new-top">New</span>
+                        <div class="men-cart-pro">
+                            <div class="inner-men-cart-pro">
+                                <a href=@Url.Content("/Content/single.html") class="link-product-add-cart">Quick View</a>
+                            </div>
+                        </div>
+
+                        <div class="men-thumb-item">
+                            <img src="~/Content/images/@item.PicUrl" alt="" class="pro-image-front" height="250" width="240">
+                            <img src="~/Content/images/@item.PicUrl" alt="" class="pro-image-back" height="250" width="240">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+
+                                    @*@Html.ActionLink("Quick View", "SingleView", new { P_ID = item.Product_ID, @class = "button link-product-add-cart", @type = "button" })
+                                    @*<a href=@Url.Content("/Content/single.html") class="link-product-add-cart">Quick View</a>*@
+                                   @* <a class="link-product-add-cart">Quick View</a>*@
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <div class="caption" style="border-top:3px solid #808080">
+                        <h3><a href="#">@item.ProductName</a></h3>
+                        <h4>@item.shortdiscription</h4>
+                        <br/>
+                        <h4>Rs. @item.Price.ToString("F2")</h4>
+
+                    </div>
+                    <div>
+                       @Html.ActionLink("Edit", "Update", new { P_ID = item.Product_ID, @class = "button", @type = "button" })|
+                       @Html.ActionLink("Delete", "Delete", new { P_ID = item.Product_ID, @class = "button", @type = "button" })
+                    </div>
+                    @*<div class="snipcart-details hvr-outline-out button2 ">
+                        
+                        <input type="button" name="submit" value="Edit" class="button">
+                        
+                    </div>*@
+                </div>
+            </div>
+        </form>
+        }
+   
+
+</div>
+
+<script>
+    function AjaxPost(formData) {
+        var ajaxConfig = {
+            type: "post",
+            url: "/Product/SaveData",
+            data: new FormData(formData),
+            success: function (result) {
+                alert(result);
+                window.location.href = "/Product/AddNewProduct"
+            }
+
+        }
+        if ($(formData).attr('enctype') == "multipart/form-data")
+        {
+            ajaxConfig["contentType"] = false;
+            ajaxConfig["processData"] = false;
+
+        }
+        $.ajax(ajaxConfig);
+        return false;
+    }
+
+
+
+    function AjaxEDIT(formData) {
+        var ajaxConfig = {
+            type: "post",
+            url: "/Product/EditData",
+            data: new FormData(formData),
+            success: function (result) {
+                alert(result);
+                window.location.href = "/Product/AddNewProduct"
+            }
+
+        }
+        if ($(formData).attr('enctype') == "multipart/form-data") {
+            ajaxConfig["contentType"] = false;
+            ajaxConfig["processData"] = false;
+
+        }
+        $.ajax(ajaxConfig);
+        return false;
+    }
+</script>
+

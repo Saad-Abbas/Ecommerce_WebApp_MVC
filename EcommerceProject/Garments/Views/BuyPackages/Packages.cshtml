@@ -1,0 +1,327 @@
+﻿
+@{
+    ViewBag.Title = "Packages";
+    Layout = "~/Views/Shared/addproductlayout.cshtml";
+}
+ <!-- additional for packages  -->
+@*<link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="icon" href=@Url.Content("/Content/register/images/favicon.png") type="image/x-icon">
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/bootstrap.min.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/fontawesome/fontawesome-all.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/linearicons.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/themify-icons.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/owl.carousel.min.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/lightpick.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/jquery.mCustomScrollbar.min.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/jquery-ui.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/tipso.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/register/css/select2.min.css")>*@
+<link rel="stylesheet" href=@Url.Content("/Content/register/css/dashboard.css")>
+<!--// additional for packages  -->
+    <!-- MAIN START -->
+<main class="sl-main">
+    <div class="sl-main-section">
+        <div class="container">
+            <div class="row">
+                @*<div class="col-lg-4 col-xl-3">
+                    <aside id="sl-asidebar" class="sl-asidebar">
+                        <div class="sl-asideholder sl-dashboardAsideholder">
+                            <a href="javascript:void(0);" id="sl-closeasidebar" class="sl-closeasidebar">
+                                <i class="lnr lnr-layers"></i>
+                            </a>
+                            <div class="sl-asidescrollbar">
+                                <div id="sl-sidebarwrapper" class="sl-sidebarwrapper">
+                                    <div class="sl-usersinfo">
+                                        <div class="single-chart">
+                                            <svg viewBox="0 0 36 36" class="circular-chart orange">
+                                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <path class="circle"
+                                                      stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                            </svg>
+                                            <figure class="sl-userprofileimg">
+                                                <img src=@Url.Content("/Content/register/images/insight/bearmen.jpg") alt="img description" width="95px" height="95px">
+                                            </figure>
+                                            <span class="sl-percentage">80% Profile Completed</span>
+                                        </div>
+                                        <div class="sl-title">
+                                            <div class="sl-slider__tags">
+                                                <span class="sl-bg-red-orange">Featured</span><span class="sl-bg-green">Verified</span>
+                                            </div>
+                                            <h3><a href="javascript:void(0);"> Louanne Mattioli</a></h3>
+                                            <div class="sl-featureRating">
+                                                <span class="sl-featureRating__stars"><span></span></span>
+                                                <em>(1642 Feedback)</em>
+                                            </div>
+                                            <div class="sl-userStatus">
+                                                <div class="sl-userStatus__content">
+                                                    <a data-toggle="collapse" href="#collapseUser" role="button" aria-expanded="false">
+                                                        I’m:<span><em class="sl-online"></em></span><em>Online</em><i class="ti-angle-down"></i>
+                                                    </a>
+                                                    <div class="collapse" id="collapseUser">
+                                                        <a href="javascript:void(0);"><span class="sl-online"></span><em>Online</em></a>
+                                                        <a href="javascript:void(0);"><span class="sl-away"></span><em>Away</em></a>
+                                                        <a href="javascript:void(0);"><span class="sl-busy"></span><em>Busy</em></a>
+                                                        <a href="javascript:void(0);"><span class="sl-offline"></span><em>Offline</em></a>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn sl-btn sl-btn-small"><i class="fas fa-check"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav id="sl-navdashboard" class="sl-navdashboard">
+                                        <ul>
+                                            <li>
+                                                <a href="dashboard-insight.html">
+                                                    <i class="ti-dashboard"></i><span>Insights</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="dashboard-vendor.html">
+                                                    <i class="ti-shopping-cart"></i><span>Vendors</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item-has-children page_item_has_children">
+                                                <a href="javascript:void(0);" class="sl-notification sl-noticolor1">
+                                                    <i class="ti-star"></i><span>Manage Appointments</span>
+                                                </a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="dashboard-appointment-single.html">Appointment Single</a></li>
+                                                    <li><a href="dashboard-all-appointment.html">All Appointment</a></li>
+                                                    <li><a href="dashboard-manage-time-slots.html">Manage Time Slots</a></li>
+                                                    <li><a href="dashboard-manage-services.html">Manage Services &amp; Prices</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="dashboard-profile-settings.html">
+                                                    <i class="ti-user"></i><span>Profile Settings</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item-has-children page_item_has_children">
+                                                <a href="javascript:void(0);">
+                                                    <i class="ti-bookmark-alt"></i><span>Manage Articles</span>
+                                                </a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="dashboard-article-list.html">Articles List</a></li>
+                                                    <li><a href="dashboard-add-new-article.html">Add New Articles</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="dashboard-inbox.html">
+                                                    <i class="ti-email"></i><span>inbox</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item-has-children page_item_has_children sl-active">
+                                                <a href="javascript:void(0);">
+                                                    <i class="ti-layers"></i><span>Packages &amp; Payouts</span>
+                                                </a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="dashboard-buy-package.html">Packages</a></li>
+                                                    <li><a href="dashboard-all-payouts.html">Payouts</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="dashboard-my-favorites.html">
+                                                    <i class="ti-heart"></i><span>My Favorites</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="dashboard-notifications.html">
+                                                    <i class="ti-bell"></i><span>Notifications</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="dashboard-accountprivacy.html">
+                                                    <i class="ti-lock"></i><span>Account &amp; Privacy</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="index-2.html">
+                                                    <i class="ti-key"></i><span>Logout</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </aside>
+                </div>*@
+                <div >
+                    <div class="sl-buyPackage">
+                        <div class="sl-buyPackage__count sl-detailNoti sl-busy-before">
+                            <div class="sl-buyPackage__count--content">
+                                <div class="sl-buyPackage__count--title">
+                                    <h4>Gold Package</h4>
+                                    <h6>Will Expire in:</h6>
+                                </div>
+                                <ul id="sl-packagecounter" class="sl-packagecounter sl-buyPackage__count--down"></ul>
+                            </div>
+                        </div>
+                        <div class="sl-buyPackage__count--btn">
+                            <a href="javascript:void(0);" class="btn sl-btn">Renew Now</a>
+                            <p>Click the button above to renew package</p>
+                        </div>
+                    </div>
+                    <div class="sl-buyPackages">
+                        <div class="sl-buyPackages__title">
+                            <h6>Buy a Package</h6>
+                        </div>
+                        <div class="sl-buyPackagesCard">
+                            <div class="sl-buyPackagesCard__card">
+                                <div class="sl-buyPackagesCard__card--content">
+                                    <img src=@Url.Content("/Content/register/images/buy-package/card/img-01.jpg") alt="Images Description">
+                                    <strong><sup>$</sup>199</strong>
+                                    <h5>Silver Package</h5>
+                                    <p><em>include all taxes <i class="ti-info-alt toltip-content" data-tipso="Plus Member"></i></em></p>
+                                </div>
+                                <div class="sl-buyPackagesCard__feature">
+                                    <h6>Package Features:</h6>
+                                    <ul>
+                                        <li>
+                                            <p>No. of products to post:</p>
+                                            <span>05</span>
+                                        </li>
+                                        <li>
+                                            <p>No. of featured products:</p>
+                                            <span>03</span>
+                                        </li>
+                                        <li>
+                                            <p>No. of free products:</p>
+                                            <span>02</span>
+                                        </li>
+                                        <li>
+                                            <p>Option to add photo slider:</p>
+                                            <span class="sl-red-orange"><i class="fas fa-times-circle"></i></span>
+                                        </li>
+                                        <li>
+                                            <p>Option to upload video demo:</p>
+                                            <span class="sl-red-orange"><i class="fas fa-times-circle"></i></span>
+                                        </li>
+                                        <li>
+                                            <p>Product Post photos limit:</p>
+                                            <span>10</span>
+                                        </li>
+                                        <li>
+                                            <p>Top rated tag:</p>
+                                            <span class="sl-red-orange"><i class="fas fa-times-circle"></i></span>
+                                        </li>
+                                    </ul>
+                                    <a href="~/Content/register.html" class="btn sl-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="sl-buyPackagesCard__card sl-goldPackage">
+                                <div class="sl-buyPackagesCard__card--content">
+                                    <img src=@Url.Content("/Content/register/images/buy-package/card/img-02.jpg") alt="Images Description">
+                                    <strong><sup>$</sup>499</strong>
+                                    <h5>Gold Package</h5>
+                                    <p><em>include all taxes <i class="ti-info-alt toltip-content" data-tipso="Plus Member"></i></em></p>
+                                    <div class="sl-slider__tags">
+                                        <span class="sl-bg-red-orange">POPULAR</span>
+                                    </div>
+                                </div>
+                                <div class="sl-buyPackagesCard__feature">
+                                    <h6>Package Features:</h6>
+                                    <ul>
+                                        <li>
+                                            <p>No. of products to post:</p>
+                                            <span>15</span>
+                                        </li>
+                                        <li>
+                                            <p>No. of featured products:</p>
+                                            <span>05</span>
+                                        </li>
+                                        <li>
+                                            <p>No. of free products:</p>
+                                            <span>10</span>
+                                        </li>
+                                        <li>
+                                            <p>Option to add photo slider:</p>
+                                            <span class="sl-green2"><i class="fas fa-check-circle"></i></span>
+                                        </li>
+                                        <li>
+                                            <p>Option to upload video demo:</p>
+                                            <span class="sl-green2"><i class="fas fa-check-circle"></i></span>
+                                        </li>
+                                        <li>
+                                            <p>Product Post photos limit:</p>
+                                            <span>30</span>
+                                        </li>
+                                        <li>
+                                            <p>Top rated tag:</p>
+                                            <span class="sl-red-orange"><i class="fas fa-times-circle"></i></span>
+                                        </li>
+                                    </ul>
+                                    <a href="javascript:void(0);" class="btn sl-btn sl-btn-active">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="sl-buyPackagesCard__card">
+                                <div class="sl-buyPackagesCard__card--content">
+                                    <img src=@Url.Content("/Content/register/images/buy-package/card/img-03.jpg") alt="Images Description">
+                                    <strong><sup>$</sup>1099</strong>
+                                    <h5>Platinium Package</h5>
+                                    <p><em>include all taxes <i class="ti-info-alt toltip-content" data-tipso="Plus Member"></i></em></p>
+                                </div>
+                                <div class="sl-buyPackagesCard__feature">
+                                    <h6>Package Features:</h6>
+                                    <ul>
+                                        <li>
+                                            <p>No. of products to post:</p>
+                                            <span>30</span>
+                                        </li>
+                                        <li>
+                                            <p>No. of featured products:</p>
+                                            <span>20</span>
+                                        </li>
+                                        <li>
+                                            <p>No. of free products:</p>
+                                            <span>10</span>
+                                        </li>
+                                        <li>
+                                            <p>Option to add photo slider:</p>
+                                            <span class="sl-green2"><i class="fas fa-check-circle"></i></span>
+                                        </li>
+                                        <li>
+                                            <p>Option to upload video demo:</p>
+                                            <span class="sl-green2"><i class="fas fa-check-circle"></i></span>
+                                        </li>
+                                        <li>
+                                            <p>Product Post photos limit:</p>
+                                            <span>50+</span>
+                                        </li>
+                                        <li>
+                                            <p>Top rated tag:</p>
+                                            <span class="sl-green2"><i class="fas fa-check-circle"></i></span>
+                                        </li>
+                                    </ul>
+                                    <a href="javascript:void(0);" class="btn sl-btn">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<script src=@Url.Content("/Content/register/js/vendor/jquery.min.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/popper.min.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/jquery-library.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/bootstrap.min.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/appear.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/countTo.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/gmap3.min.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/jquery.mCustomScrollbar.concat.min.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/select2.min.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/readmore.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/jquery-ui.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/lightpick.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/tipso.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/countdown.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/owl.carousel.min.js")></script>
+<script src=@Url.Content("/Content/register/js/vendor/jquery.ui.touch-punch.js")></script>
+<script src=@Url.Content("/Content/register/js/main.js")></script>
+

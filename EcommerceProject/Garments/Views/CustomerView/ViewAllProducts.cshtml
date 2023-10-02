@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "ViewAllProducts";
+    Layout = "~/Views/Shared/_LayoutCustomerView.cshtml";
+}
+
+
+
+
+<div class="container">
+   
+    <br /><br />
+
+        @foreach (var item in ViewBag.Mylist)
+        {
+
+        <div class="col-md-3 product-men">           
+            <div class="men-pro-item simpleCart_shelfItem">
+                                    
+                        @*<img  class="img-responsive" src="~/Content/images/@item.PicUrl" height="250" width="240" />*@          
+                       <div class="men-thumb-item">
+                            <img src="~/Content/images/@item.PicUrl" alt="" class="pro-image-front" height="250" width="240">
+                            <img src="~/Content/images/@item.PicUrl" alt="" class="pro-image-back" height="250" width="240">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">                                   
+                                    @Html.ActionLink("Quick View", "SingleView", new { P_ID = item.Product_ID, @class = "button link-product-add-cart", @type = "button" })                                 
+                                    <a class="link-product-add-cart">Quick View</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+
+                        </div>
+                    
+                <div class="item-info-product ">                   
+                        <h4><a href="#">@item.ProductName</a></h4>
+                        <h4>@item.shortdiscription</h4>                                                        
+                    <div class="info-product-price">
+                        <span class="item_price">Rs. @item.Price.ToString("F2")</span>
+                        <del>Rs.359.71</del>
+                    </div>
+                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                        @*<form id="AddNewProduct" method="post"  enctype="multipart/form-data" onsubmit="return AjaxPost(this)">*@
+                        <form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="business" value=" ">
+                                <input type="hidden" name="item_name" value="@item.ProductName">
+                                <input type="hidden" name="amount" value="@item.Price">
+                                <input type="hidden" name="discount_amount" value="1.00">
+                                <input type="hidden" name="currency_code" value="USD">
+                                <input type="hidden" name="return" value=" ">
+                                <input type="hidden" name="cancel_return" value=" ">
+                                <input type="submit" name="submit" value="Add to cart" class="button">
+
+                                @*<input type="hidden" name="Product_ID" value="@item.Product_ID" />
+                                    <input type="hidden" name="ProductName" value="@item.ProductName" />
+                                    <input type="hidden" name="shortdiscription" value="@item.shortdiscription" />
+                                    <input type="hidden" name="Price" value="@item.Price" />
+                                    <input type="hidden" name="cmd" value="@item.producttype" />
+                                    <input type="hidden" name="add" value="1" />
+
+                                    <input type="hidden" name="discount_amount" value="1.00" />
+                                    <input type="hidden" name="currency_code" value="PAK" />
+                                     <input type="hidden" name="cancel_return" value=" " />
+                                    <input type="submit" name="submit" value="Add to cart" class="button" />*@  
+                            </fieldset>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+
+           </div>
+
+        }
+    </div>
+
+
+<script>
+    function AjaxPost(formData) {
+        var ajaxConfig = {
+            type: "post",
+            url: "/AddToCart/Listdata",
+            data: new FormData(formData),
+            success: function (result) {
+                alert(result);
+                window.location.href = "/CustomerView/ViewAllProducts"
+            }
+
+        }
+        if ($(formData).attr('enctype') == "multipart/form-data")
+        {
+            ajaxConfig["contentType"] = false;
+            ajaxConfig["processData"] = false;
+
+        }
+        $.ajax(ajaxConfig);
+        return false;
+    }
+
+
+
+
+
+</script>
+
+<!-- //login -->
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<script src="js/modernizr.custom.js"></script>
+<!-- Custom-JavaScript-File-Links -->
+<!-- cart-js -->
+<script src="js/minicart.min.js"></script>
+
+<script>
+    $('#zoom_05').ezPlus({
+        zoomType: 'inner',
+        cursor: 'crosshair'
+    });
+</script>
+<!-- //here ends scrolling icon -->
+<!-- for bootstrap working -->
+<script type="text/javascript" src="js/bootstrap.js"></script>

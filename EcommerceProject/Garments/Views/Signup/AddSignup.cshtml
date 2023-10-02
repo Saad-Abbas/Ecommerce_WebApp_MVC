@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "AddSignup";
+    Layout = "~/Views/Shared/addproductlayout.cshtml";
+}
+<br /><br />
+<h2 class="text-center">Add  Signup</h2>
+<br /><br/>
+
+
+<div class="container">
+
+    
+
+    <form id="Signup"  method="post" enctype="multipart/form-data" onsubmit="return AjaxPostsignup(this)">
+       
+        <br/>
+        <br />
+        <div class="styled-input agile-styled-input-top">
+            <input  id="signupname" name="signupname" class="form-control" placeholder="Name">
+           
+            <span></span>
+        </div>
+        <div class="styled-input">
+            <input type="email" id="signupemail" name="signupemail" class="form-control"  placeholder="Email">
+           
+            <span></span>
+        </div>
+        <div class="styled-input">
+            <input type="password" id="signuppassword" name="signuppassword" class="form-control" placeholder="Password">
+           
+            <span></span>
+        </div>
+        <div class="styled-input">
+            <input type="password" id="signuprepassword" name="signuprepassword" class="form-control" placeholder="Re-password">
+           
+            <span></span>
+        </div>
+        <div>
+
+            <input id="usertype" name="usertype" class="form-control" placeholder="User Type">
+        </div> 
+        <br />
+        <br />
+
+        <button class="hvr-outline-out button2 " value="Sign Up"> Signup </button>
+    </form>
+</div>
+<br/>
+<br />
+<br />
+
+
+<!-- //Modal content-->
+<br/>
+<br/>
+
+<script>
+    function AjaxPostsignup(formData) {
+        var ajaxConfig = {
+            type: "post",
+            url: "/Signup/signup",                      // controller then post method which gets form data and post into database
+            data: new FormData(formData),
+            success: function (result) {
+                alert(result);
+                window.location.href = "/Signup/AddSignup"         //controller then / actionmethod whose view is this
+            }
+        }
+        if ($(formData).attr('enctype') == "multipart/form-data") {
+            ajaxConfig["contentType"] = false;
+            ajaxConfig["processData"] = false;
+
+        }
+        $.ajax(ajaxConfig);
+        return false;
+    }
+    
+    
+        //function BtnClick() {
+
+        //    var sname = $("#signupname".val());
+        //    var semail = $("#signupemail".val());
+        //    var spassword = $("#signuppassword".val());
+        //    var srepassword = $("#signuprepassword".val());
+        //    if (spassword == srepassword) {
+        //        var obj = {
+        //            sname: signupname,
+        //            semail: signupemail,
+        //            spassword: signuppassword,
+        //            srepassword: signuprepassword
+        //        }
+        //        Signup(obj)
+        //    }
+        //    else {
+        //        console.error("Password could not match");
+        //    }
+
+        //}
+
+        //function Signup(obj) {
+        //    $.ajax({
+        //        url: " /Signup/signup",    // controller/method
+        //        method: "POST",
+        //        data: obj,
+        //        success: function (data) {
+        //            alert();
+        //        },
+        //        error: function (err) {
+        //            console.error(err);
+        //        }
+        //    })
+
+        //}
+</script>
+
+
